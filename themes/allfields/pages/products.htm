@@ -1,0 +1,76 @@
+title = "products"
+url = "/products"
+layout = "main"
+is_hidden = 0
+
+[records Products]
+activeOnly = 1
+categorySlug = "{{ :category }}"
+tagSlug = "{{ :tag }}"
+recordPage = "record"
+recordPageSlug = "{{ :record }}"
+limit = 10
+pageSlug = "{{ :page }}"
+orderBy = "name"
+orderByDirection = "ASC"
+==
+<div class="wrapper bgded overlay" style="background-image:url('../images/demo/backgrounds/01.png');">
+  <div id="breadcrumb" class="hoc clear"> 
+    
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/products">Products</a></li>
+    </ul>
+    
+  </div>
+</div>
+
+<div class="wrapper coloured">
+  <article class="hoc cta clear"> 
+    
+    <h6 class="three_quarter first font-x2">Our Products</h6>
+    
+  </article>
+</div>
+
+<div class="wrapper row3">
+  <main class="hoc container clear"> 
+    <!-- main body -->
+    
+    <div class="content"> 
+      <p>
+      Aliquatjusto quisque nam consequat doloreet vest orna partur scetur portortis nam. Metadipiscing eget facilis elit sagittis felisi eger id justo maurisus convallicitur. Dapiensociis et curabitur condis lorem loborttis leo. Ipsumcommodo libero nunc at in velis tincidunt pellentum tincidunt vel lorem. Aliquatjusto quisque nam consequat doloreet vest orna partur scetur portortis nam. Metadipiscing eget facilis elit sagittis felisi eger id justo maurisus convallicitur. Dapiensociis et curabitur condis lorem loborttis leo. Ipsumcommodo libero nunc at in velis tincidunt pellentum tincidunt vel lorem.  Aliquatjusto quisque nam consequat doloreet vest orna partur scetur portortis nam. Metadipiscing eget facilis elit sagittis felisi eger id justo maurisus convallicitur. Dapiensociis et curabitur condis lorem loborttis leo. Ipsumcommodo libero nunc at in velis tincidunt pellentum tincidunt vel lorem. Aliquatjusto quisque nam consequat doloreet vest orna partur scetur portortis nam. Metadipiscing eget facilis elit sagittis felisi eger id justo maurisus convallicitur. Dapiensociis et curabitur condis lorem loborttis leo. Ipsumcommodo libero nunc at in velis tincidunt pellentum tincidunt vel lorem.
+      </p>
+    </div>
+    <div class="clear"></div>
+  </main>
+</div>
+
+ {# Products #}
+        <div class="wrapper row2">
+        <div class="hoc container clear">
+
+                <ul id="latest" class="nospace group grid-3 products">
+{% for product in Products.items %}
+                    <li class="one_third">
+                        <article>
+                            <figure>
+                                    <img src="{{ product.preview_image.getPath}}" alt=""
+                                />
+                            </figure>
+                            <div class="excerpt">
+                                <h4 class="heading">
+                {{ product.name }}
+                                 </h4>
+                                <p>
+                                
+                {{ product.description|raw }}
+                                </p>
+                                <footer><a href="">Enquire</a></footer>
+                            </div>
+                        </article>
+                    </li>
+{% endfor %}
+                </ul>
+          </div>
+        </div>

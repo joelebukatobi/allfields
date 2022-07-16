@@ -1,0 +1,91 @@
+title = "Blog"
+url = "/blog"
+layout = "main"
+is_hidden = 0
+
+[newsPosts]
+pageNumber = "{{ :page }}"
+postsPerPage = 10
+noPostsMessage = "No posts found"
+sortOrder = "published_at desc"
+postFeatured = 0
+postPage = "blog"
+categoryPage = "blog"
+==
+{% set posts = newsPosts.posts %}
+
+
+<div class="wrapper bgded overlay" style="background-image:url('../images/demo/backgrounds/01.png');">
+  <div id="breadcrumb" class="hoc clear"> 
+    
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/blog">Blog</a></li>
+    </ul>
+    
+  </div>
+</div>
+
+<div class="wrapper coloured">
+  <article class="hoc cta clear"> 
+    
+    <h6 class="three_quarter first font-x2">Our Latest Blogposts</h6>
+    
+  </article>
+</div>
+
+
+
+
+
+<div class="wrapper row3">
+  <main class="hoc container clear"> 
+    <!-- main body -->
+    
+    <div class="content"> 
+      <p>
+      Aliquatjusto quisque nam consequat doloreet vest orna partur scetur portortis nam. Metadipiscing eget facilis elit sagittis felisi eger id justo maurisus convallicitur. Dapiensociis et curabitur condis lorem loborttis leo. Ipsumcommodo libero nunc at in velis tincidunt pellentum tincidunt vel lorem. Aliquatjusto quisque nam consequat doloreet vest orna partur scetur portortis nam. Metadipiscing eget facilis elit sagittis felisi eger id justo maurisus convallicitur. Dapiensociis et curabitur condis lorem loborttis leo. Ipsumcommodo libero nunc at in velis tincidunt pellentum tincidunt vel lorem.  Aliquatjusto quisque nam consequat doloreet vest orna partur scetur portortis nam. Metadipiscing eget facilis elit sagittis felisi eger id justo maurisus convallicitur. Dapiensociis et curabitur condis lorem loborttis leo. Ipsumcommodo libero nunc at in velis tincidunt pellentum tincidunt vel lorem. Aliquatjusto quisque nam consequat doloreet vest orna partur scetur portortis nam. Metadipiscing eget facilis elit sagittis felisi eger id justo maurisus convallicitur. Dapiensociis et curabitur condis lorem loborttis leo. Ipsumcommodo libero nunc at in velis tincidunt pellentum tincidunt vel lorem.
+      </p>
+    </div>
+    <div class="clear"></div>
+  </main>
+</div>
+
+ {# Blog Post #}
+        {% for post in posts %}
+        <div class="wrapper row2">
+            <section class="hoc container clear">
+                <ul id="latest" class="nospace group grid-3">
+                    <li class="one_third">
+                        <article>
+                            <figure>
+                                <a class="imgover blog-image" href="/blog/{{ post.slug}}">
+                                    <img src="{{ post.image | media }}" alt=""
+                                /></a>
+                            </figure>
+                            <div class="excerpt">
+                                <ul class="nospace meta clear">
+                                    <li>
+                                        <i class="fas fa-user"></i>
+                                        <a href="#">Admin</a>
+                                    </li>
+                                    <li>
+                                        <time datetime="2045-04-06T08:15+00:00"
+                                            >06 Apr 2045</time
+                                        >
+                                    </li>
+                                </ul>
+                                <h6 class="heading">
+                                 {{ post.title }}
+                                 </h6>
+                                <p>
+                                 {{ post.introductory|raw }}
+                                </p>
+                                <footer><a href="/blog/{{ post.slug }}">Read More</a></footer>
+                            </div>
+                        </article>
+                    </li>
+                </ul>
+            </section>
+        </div>
+        {% endfor %}
