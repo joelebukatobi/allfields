@@ -12,6 +12,7 @@
             type="text/css"
             media="all"
         />
+          <link rel="icon" type="image/x-icon" href="{{'assets/img/logo.png' | theme }}">
     </head>
 
     
@@ -22,12 +23,10 @@
                 <ul class="nospace clear">
                     <li class="one_quarter first">
                         <div class="block clear">
-                            <a href="#"><i class="fas fa-phone"></i></a>
+                            <a href="tel:+2348113992192"><i class="fas fa-phone"></i></a>
                             <span
                                 >Give us a call:
                                 <strong>+234 811 3992 192</strong>
-                                <strong>+234 902 2524 996
-</strong>
                                 </span>
                                 
                                 
@@ -36,7 +35,7 @@
                     </li>
                     <li class="one_quarter">
                         <div class="block clear">
-                            <a href="#"><i class="fas fa-envelope"></i></a>
+                            <a href="mailto:info@allfieldsglobal.com"><i class="fas fa-envelope"></i></a>
                             <span
                                 >Send us a mail:
                                 <strong>info@allfieldsglobal.com</strong></span
@@ -53,7 +52,7 @@
                         </div>
                     </li>
                     <li class="one_quarter">
-                        <a class="btn colourblue" href="#"><strong>Contact Us</strong></a>
+                        <a class="btn" href="/contact"><strong>Contact Us</strong></a>
                     </li>
                 </ul>
             </section>
@@ -71,7 +70,7 @@
                         <li class=""><a href="/about">About</a></li>
                         <li class=""><a href="/services">Services</a></li>
                         <li class=""><a href="/products">Products</a></li>
-                        <li class=""><a href="/blog">Blog</a></li>
+                        {# <li class=""><a href="/blog">Blog</a></li> #}
                         <li class=""><a href="/contact">Contact</a></li>
                         {# <li>
                             <a class="drop" href="/services">Dropdown</a>
@@ -233,18 +232,26 @@
                     <a
                         target="_blank"
                         href="https://www.cloudnetvox.com"
-                        >Cloud Netvox</a
+                        >Netvox Networks Infrastructure Limited</a
                     >
                 </p>
             </div>
         </div>
         {# Footer End #}
 
+        <div id="icon-whatsapp">
+            <a href="https://api.whatsapp.com/send?phone=2349022524996">
+                <img src="{{ 'assets/img/icon-whatsapp.png' | theme }}">
+            </a>
+        </div>
         <a id="backtotop" href="#top"><i class="fas fa-chevron-up"></i></a>
         
         {# JavaScrpt #}
         <script src="{{ 'assets/js/jquery.min.js' | theme }}"></script>
         <script src="{{'assets/js/jquery.backtotop.js' | theme}}"></script>
         <script src="{{'assets/js/jquery.mobilemenu.js' | theme }}"></script>
+        <script src="{{'assets/js/app.js' | theme }}"></script>
+        {% framework %}
+        {% framework extras %}
     </body>
 </html>

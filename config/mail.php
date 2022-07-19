@@ -56,8 +56,8 @@ return [
     */
 
     'from' => [
-        'address' => 'noreply@domain.tld',
-        'name'    => 'Winter CMS',
+        'address' => 'info@allfieldsglobal.com',
+        'name'    => 'Allfields Global',
     ],
 
     /*
@@ -126,3 +126,5 @@ return [
     // 'log_channel' => env('MAIL_LOG_CHANNEL'),
 
 ];
+
+

@@ -13,8 +13,12 @@ limit = 10
 pageSlug = "{{ :page }}"
 orderBy = "name"
 orderByDirection = "ASC"
+
+[contactForm]
+injectBootstrapAssets = 1
+injectMainScript = 1
 ==
-<div class="wrapper bgded overlay" style="background-image:url('../images/demo/backgrounds/01.png');">
+<div class="wrapper bgded overlay" style="background-image: url('{{'assets/img/backgrounds/hero-bg.png' | theme }}')">
   <div id="breadcrumb" class="hoc clear"> 
     
     <ul>
@@ -39,7 +43,7 @@ orderByDirection = "ASC"
     
     <div class="content"> 
       <p>
-      Aliquatjusto quisque nam consequat doloreet vest orna partur scetur portortis nam. Metadipiscing eget facilis elit sagittis felisi eger id justo maurisus convallicitur. Dapiensociis et curabitur condis lorem loborttis leo. Ipsumcommodo libero nunc at in velis tincidunt pellentum tincidunt vel lorem. Aliquatjusto quisque nam consequat doloreet vest orna partur scetur portortis nam. Metadipiscing eget facilis elit sagittis felisi eger id justo maurisus convallicitur. Dapiensociis et curabitur condis lorem loborttis leo. Ipsumcommodo libero nunc at in velis tincidunt pellentum tincidunt vel lorem.  Aliquatjusto quisque nam consequat doloreet vest orna partur scetur portortis nam. Metadipiscing eget facilis elit sagittis felisi eger id justo maurisus convallicitur. Dapiensociis et curabitur condis lorem loborttis leo. Ipsumcommodo libero nunc at in velis tincidunt pellentum tincidunt vel lorem. Aliquatjusto quisque nam consequat doloreet vest orna partur scetur portortis nam. Metadipiscing eget facilis elit sagittis felisi eger id justo maurisus convallicitur. Dapiensociis et curabitur condis lorem loborttis leo. Ipsumcommodo libero nunc at in velis tincidunt pellentum tincidunt vel lorem.
+      sAllfields Global is an integrated group of companies created to meet the growing demand for excellence the world over. Our vision is to be an Exceptional One Stop company providing credible information that will be insightful to help out clients make informed decisions. ALLFIEDS GLOBAL RESOURCES LTD facilitates the buying and selling of Bonny light Crude oil (BLCO) and other petroleum products on TTO, TTT, FOB and CIF to ASWP. Driven by our passion for excellence we are committed to deliver results by accompanying the full process from contract negotiations and signing to final products delivery ( click on link to see current offers).      Allfields Global Services is a non political and non partisan consultancy and research agency created for leading Manufacturers, Industrialist, Governments, Civic organisations and Corporate institutions to look inward towards increasing proficiency in products and services delivery due to increase in technology and a competitive global market environment (click on link for our research services)
       </p>
     </div>
     <div class="clear"></div>
@@ -66,7 +70,7 @@ orderByDirection = "ASC"
                                 
                 {{ product.description|raw }}
                                 </p>
-                                <footer><a href="">Enquire</a></footer>
+                                <footer><a id="btn-link" onclick="openModal()">Enquire</a></footer>
                             </div>
                         </article>
                     </li>
@@ -74,3 +78,32 @@ orderByDirection = "ASC"
                 </ul>
           </div>
         </div>
+
+
+<div id="modal" class="modal">
+  <div class="modal-content">
+    <span class="modal-close" onclick="closeModal()">&times;</span>
+    <h4>Please complete the form below and someonew will contact you shortly</h4>
+    <form class="flexiContactForm" role="form"
+      data-request="{{ contactForm }}::onMailSent"
+      data-request-update="'{{ contactForm }}::confirm': '.confirm-container'">
+          <div class="">
+            <input type="text" name="name" id="name" value="" size="22" placeholder="Name" required>
+          </div>
+          <div class="">
+            <input type="email" name="email" id="email" value="" size="22" placeholder="Email" required>
+          </div>
+          <div class="">
+            <input type="text" name="subject" id="subject" value="" size="22" placeholder="Subject"> 
+          </div>
+          <div class="block clear">
+            <textarea name="body" id="body" cols="25" rows="10" placeholder="Message"></textarea>
+          </div>
+          <div>
+            <input class="form-btn" type="submit" name="submit" value="Send Message">
+          </div>
+        </form>
+      
+  <div class="confirm-container colourgreen font-bold pb-20"></div>
+  </div>
+</div>

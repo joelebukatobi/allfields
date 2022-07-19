@@ -685,7 +685,7 @@ nav ol {
     position: fixed;
     visibility: hidden;
     bottom: 20px;
-    right: 20px;
+    right: 32px;
     width: 36px;
     height: 36px;
     line-height: 36px;
@@ -1402,9 +1402,38 @@ table a,
     border-color: #0d0620;
 }
 
+.colourgreen {
+    display: flex;
+    color: green;
+}
+
+.colourgreen h2 {
+    font-weight: bold;
+}
+
 .split section,
 .split section::after {
     background-color: #0d0620 !important;
+}
+
+.mb-0 {
+    margin-bottom: 0;
+}
+
+.pb-40 {
+    padding-bottom: 40px;
+}
+
+.mb-40 {
+    margin-bottom: 40px;
+}
+
+.p-20 {
+    padding: 20px 0;
+}
+
+.p-40 {
+    padding: 40px 0;
 }
 
 .p-80 {
@@ -1423,6 +1452,108 @@ table a,
 .row5 a {
     color: #fff;
     background-color: transparent;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal-content {
+    background-color: #0d0620;
+    margin: auto;
+    padding: 40px;
+    width: 30%;
+}
+
+.modal-close {
+    color: #d72620;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.modal-close:hover,
+.modal-close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-content h4 {
+    color: #fff;
+    width: 80%;
+}
+
+.modal-content form {
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-content form > *:not(:last-child) {
+    margin-bottom: 8px;
+}
+
+.modal-content form input {
+    height: 48px;
+    width: 100%;
+    padding-left: 16px;
+}
+
+.modal-content form .form-btn {
+    color: #fff;
+    background-color: #d72620;
+    border: none;
+    outline: none;
+}
+
+.modal-content form textarea {
+    padding-top: 16px;
+    width: 100%;
+    padding-left: 16px;
+}
+
+#icon-whatsapp {
+    z-index: 999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    /* visibility: hidden; */
+    bottom: 80px;
+    right: 20px;
+    width: 64px;
+    height: 64px;
+    line-height: 36px;
+    font-size: 16px;
+    text-align: center;
+    opacity: 0.5;
+    background-color: #d72620;
+    padding: 16px;
+    border-radius: 100%;
+}
+
+#icon-whatsapp img {
+    height: 100%;
+    width: 100%;
+}
+
+#icon-whatsapp.visible {
+    visibility: visible;
+    opacity: 0.5;
+}
+
+#icon-whatsapp:hover {
+    opacity: 1;
 }
 
 @media screen and (min-width: 0px) and (max-width: 576px) {

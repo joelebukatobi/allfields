@@ -2,9 +2,12 @@ title = "contact"
 url = "/contact"
 layout = "main"
 is_hidden = 0
-==
 
-<div class="wrapper bgded overlay" style="background-image:url('../images/demo/backgrounds/01.png');">
+[contactForm]
+injectBootstrapAssets = 1
+injectMainScript = 1
+==
+<div class="wrapper bgded overlay" style="background-image: url('{{'assets/img/backgrounds/hero-bg.png' | theme }}')">
   <div id="breadcrumb" class="hoc clear"> 
     
     <ul>
@@ -33,10 +36,16 @@ is_hidden = 0
 
       </h2>
       
+          <div class="confirm-container colourgreen font-bold pb-20">
+    <!--This will contain the confirmation when the email is successfully sent-->
+    </div>  
 
       <br>
+      
       <div id="comments">
-        <form action="#" method="post">
+          <form class="flexiContactForm" role="form"
+      data-request="{{ contactForm }}::onMailSent"
+      data-request-update="'{{ contactForm }}::confirm': '.confirm-container'">
           <div class="one_third first">
             <label for="name">Name <span>*</span></label>
             <input type="text" name="name" id="name" value="" size="22" required>
@@ -46,12 +55,12 @@ is_hidden = 0
             <input type="email" name="email" id="email" value="" size="22" required>
           </div>
           <div class="one_third">
-            <label for="url">Subject</label>
-            <input type="url" name="url" id="url" value="" size="22">
+            <label for="subjext">Subject</label>
+            <input type="text" name="subject" id="subject" value="" size="22">
           </div>
           <div class="block clear">
-            <label for="comment">Your Message</label>
-            <textarea name="comment" id="comment" cols="25" rows="10"></textarea>
+            <label for="body">Your Message</label>
+            <textarea name="body" id="body" cols="25" rows="10"></textarea>
           </div>
           <div>
             <input type="submit" name="submit" value="Send Message">
